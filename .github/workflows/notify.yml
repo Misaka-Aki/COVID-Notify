@@ -21,5 +21,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
     - name: run
+      env:
+        KEY: ${{ secrets.KEY }}
       run: |
         python notify-on-schedule.py
